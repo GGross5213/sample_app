@@ -39,7 +39,14 @@ Spork.prefork do
     # automatically. This will be the default behavior in future versions of
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
+
+    config.include Capybara::DSL
   end
+
+  Capybara.configure do |config|
+  config.match = :prefer_exact
+  config.ignore_hidden_elements = false
+end
 end
 
 Spork.each_run do
