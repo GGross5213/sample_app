@@ -41,6 +41,7 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
 
     config.include Capybara::DSL
+    ActiveRecord::Migration.maintain_test_schema!
   end
 
   Capybara.configure do |config|
